@@ -1765,10 +1765,12 @@ function handleForm(e) {
   const safeSvc   = sanitizeText(rawSvc,   60);
   const safeMsg   = sanitizeText(rawMsg,   500);
 
-  const body = 'New enquiry via website\nName: ' + safeName
-    + '\nEmail: ' + safeEmail
-    + '\nPackage: ' + (safeSvc || 'Not specified')
-    + '\nMessage: ' + safeMsg;
+  const body = 'Hi there! I just filled out your website form. Here are my details:\n'
+    + '\u{1F464} Name: ' + safeName
+    + '\n\u{1F4E7} Email: ' + safeEmail
+    + '\n\u{1F4BC} Package: ' + (safeSvc || 'Not specified')
+    + (safeMsg ? '\n\u{1F4AC} Message: ' + safeMsg : '')
+    + '\n\nLooking forward to connecting!';
 
   window.open(
     'https://wa.me/27810572093?text=' + encodeURIComponent(body),
