@@ -78,8 +78,8 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { overflow-x: clip; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -1128,7 +1128,7 @@
 <!-- ░░░ HERO ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 <section class="hero">
   <canvas id="hero-canvas"></canvas>
-  <img src="brand_assets/Cicad Symbol.jpg" class="sym-watermark" alt="" style="width:clamp(180px,40vw,420px);right:0;top:50%;transform:translateY(-50%);filter:invert(1) brightness(2);">
+  <img src="brand_assets/Cicad Symbol.jpg" class="sym-watermark" alt="" style="width:clamp(200px,45vw,420px);left:50%;top:50%;transform:translate(-50%,-50%);filter:invert(1) brightness(2);">
   <div class="hero-inner">
     <div class="eyebrow">
       <span class="eyebrow-dot"></span>
@@ -1310,7 +1310,7 @@
         </div>
         <div>
           <p class="why-h">Dedicated Support</p>
-          <p class="why-p">A real person responds to your calls and emails Monday to Friday, 9am to 5pm. Chat on WhatsApp, request a screen share or browse our video guide library anytime. You are never left figuring things out alone.</p>
+          <p class="why-p">A real person responds to your calls and emails Monday to Friday, 9am to 5pm. Chat on WhatsApp anytime. You are never left figuring things out alone.</p>
         </div>
       </div>
 
