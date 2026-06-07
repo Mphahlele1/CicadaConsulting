@@ -42,7 +42,7 @@
     "url": "https://cicadaconsulting.co.za",
     "telephone": "+27810572093",
     "email": "consultingcicada@gmail.com",
-    "priceRange": "R700 – R3000",
+    "priceRange": "R2000 – R6000",
     "areaServed": "South Africa",
     "serviceType": [
       "Web Design", "AI Consulting", "Web Consulting",
@@ -52,9 +52,9 @@
       "@type": "OfferCatalog",
       "name": "Web Design Packages",
       "itemListElement": [
-        {"@type": "Offer", "name": "Essential Presence",    "price": "700",  "priceCurrency": "ZAR"},
-        {"@type": "Offer", "name": "Corporate Growth",      "price": "1500", "priceCurrency": "ZAR"},
-        {"@type": "Offer", "name": "Enterprise Ecosystem",  "price": "3000", "priceCurrency": "ZAR"}
+        {"@type": "Offer", "name": "Essential Presence",    "price": "2000", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Corporate Growth",      "price": "4200", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Enterprise Ecosystem",  "price": "6000", "priceCurrency": "ZAR"}
       ]
     }
   }
@@ -82,8 +82,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: clip; }
-    body { overflow-x: clip; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -112,8 +111,6 @@
       align-items: center;
       gap: 18px;
       text-decoration: none;
-      min-width: 0;
-      flex-shrink: 1;
     }
     .nav-symbol {
       height: 78px;
@@ -139,7 +136,6 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
-      min-width: 0;
     }
     .nav-name {
       font-family: 'Montserrat', sans-serif;
@@ -160,7 +156,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .nav-links { display: flex; align-items: center; gap: 32px; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -1080,9 +1076,6 @@
     @media (max-width: 960px) {
       nav { padding: 12px 20px; }
       .nav-links a:not(.btn-nav) { display: none; }
-      .nav-symbol { height: 48px; }
-      .nav-slogan { display: none; }
-      .nav-name { font-size: 18px; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
       .why-grid, .cards, .testi-grid { grid-template-columns: 1fr; }
       .foot-top { flex-direction: column; }
@@ -1091,20 +1084,11 @@
       .cta-body { padding: 72px 20px; }
     }
     @media (max-width: 600px) {
-      .nav-symbol { height: 38px; }
-      .nav-name { font-size: 14px; letter-spacing: 0.02em; }
-      .nav-links { gap: 12px; }
-      .btn-nav { padding: 9px 14px !important; font-size: 12px !important; }
       .trust-strip { gap: 22px; padding: 18px 20px; }
       .why-item { flex-direction: column; }
       .why-circle { width: 72px; height: 72px; }
       .why-circle svg { width: 30px; height: 30px; }
       .wa-fab { bottom: 18px; right: 18px; }
-    }
-    @media (max-width: 380px) {
-      .nav-wordmark { display: none; }
-      .nav-symbol { height: 36px; }
-      .btn-nav { padding: 8px 12px !important; font-size: 11px !important; }
     }
   </style>
 </head>
@@ -1132,7 +1116,7 @@
 <!-- ░░░ HERO ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 <section class="hero">
   <canvas id="hero-canvas"></canvas>
-  <img src="brand_assets/Cicad Symbol.jpg" class="sym-watermark" alt="" style="width:clamp(200px,45vw,420px);left:50%;top:50%;transform:translate(-50%,-50%);filter:invert(1) brightness(2);">
+  <img src="brand_assets/Cicad Symbol.jpg" class="sym-watermark" alt="" style="width:420px;right:-60px;top:50%;transform:translateY(-50%);filter:invert(1) brightness(2);">
   <div class="hero-inner">
     <div class="eyebrow">
       <span class="eyebrow-dot"></span>
@@ -1314,7 +1298,7 @@
         </div>
         <div>
           <p class="why-h">Dedicated Support</p>
-          <p class="why-p">A real person responds to your calls and emails Monday to Friday, 9am to 5pm. Chat on WhatsApp anytime. You are never left figuring things out alone.</p>
+          <p class="why-p">A real person responds to your calls and emails Monday to Friday, 9am to 5pm. Chat on WhatsApp, request a screen share or browse our video guide library anytime. You are never left figuring things out alone.</p>
         </div>
       </div>
 
@@ -1328,8 +1312,8 @@
     <div class="s-center reveal">
       <img src="brand_assets/Cicad Symbol.jpg" class="sym-section" style="width:64px;height:64px;" alt="">
       <div class="s-label">Pricing</div>
-      <h2 class="s-title">Straightforward monthly packages</h2>
-      <p class="s-body">No hidden fees. No confusing quotes. Choose the tier that fits your business and we handle everything from design to hosting.</p>
+      <h2 class="s-title">Straightforward once-off packages</h2>
+      <p class="s-body">No hidden fees. No confusing quotes. Choose the tier that fits your business and we handle everything from design to handover.</p>
     </div>
     <div class="cards">
 
@@ -1337,8 +1321,11 @@
       <div class="card reveal">
         <div class="tier">Tier 1</div>
         <div class="cname">Essential Presence</div>
-        <div class="price"><sup>R</sup>700<sub>/month</sub></div>
-        <div class="dep">Setup deposit: R350.00</div>
+        <div class="price"><sup>R</sup>2,000<sub>once-off</sub></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+          <div class="dep" style="margin-bottom:0;">Deposit: R1,000.00</div>
+          <div class="dep" style="margin-bottom:0;">3–5 business days</div>
+        </div>
         <div class="divider"></div>
         <ul class="feat">
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom designed website, built from scratch</li>
@@ -1355,8 +1342,11 @@
         <div class="hot-badge">Most Popular</div>
         <div class="tier">Tier 2</div>
         <div class="cname">Corporate Growth</div>
-        <div class="price"><sup>R</sup>1,500<sub>/month</sub></div>
-        <div class="dep">Setup deposit: R750.00</div>
+        <div class="price"><sup>R</sup>4,200<sub>once-off</sub></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+          <div class="dep" style="margin-bottom:0;">Deposit: R2,100.00</div>
+          <div class="dep" style="margin-bottom:0;">5–7 business days</div>
+        </div>
         <div class="divider"></div>
         <ul class="feat">
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 10-page professional website</li>
@@ -1372,10 +1362,14 @@
       <div class="card reveal d2">
         <div class="tier">Tier 3</div>
         <div class="cname">Enterprise Ecosystem</div>
-        <div class="price"><sup>R</sup>3,000<sub>/month</sub></div>
-        <div class="dep">Setup deposit: R1,500.00</div>
+        <div class="price"><sup>R</sup>6,000<sub>once-off</sub></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+          <div class="dep" style="margin-bottom:0;">Deposit: R3,000.00</div>
+          <div class="dep" style="margin-bottom:0;">7–10 business days</div>
+        </div>
         <div class="divider"></div>
         <ul class="feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Premium multi-page website with advanced interactive elements, custom UI/UX design, and a custom-trained AI Chatbot configured for your specific business enquiries</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SA payment gateways (Yoco, PayFast, Ozow)</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Xero or Sage accounting synchronisation</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced security and firewall protection</li>
@@ -1444,9 +1438,9 @@
             <label class="flabel" for="cf-service">Package Interest</label>
             <select class="fselect" id="cf-service" name="service">
               <option value="">Select a package (optional)</option>
-              <option value="Essential Presence">Essential Presence — R700/month</option>
-              <option value="Corporate Growth">Corporate Growth — R1,500/month</option>
-              <option value="Enterprise Ecosystem">Enterprise Ecosystem — R3,000/month</option>
+              <option value="Essential Presence">Essential Presence — R2,000 once-off</option>
+              <option value="Corporate Growth">Corporate Growth — R4,200 once-off</option>
+              <option value="Enterprise Ecosystem">Enterprise Ecosystem — R6,000 once-off</option>
               <option value="Not sure yet">Not sure yet, need guidance</option>
             </select>
           </div>
@@ -1578,19 +1572,19 @@
     <button class="pay-close" onclick="closePayment()" aria-label="Close">&times;</button>
     <div class="pay-pkg-badge" id="pay-badge">Tier 1</div>
     <h3 class="pay-h" id="pay-h">Essential Presence</h3>
-    <p class="pay-sub">Choose how you would like to pay. Both options open a secure Yoco checkout page.</p>
+    <p class="pay-sub">Choose how you would like to proceed. Both options open a secure Yoco checkout page.</p>
     <div class="pay-options">
       <!-- Deposit option -->
       <a id="pay-dep-link" href="https://pay.yoco.com/r/me0jKb" target="_blank" rel="noopener noreferrer" class="pay-option" onclick="closePayment()">
         <div class="po-tag">Pay Deposit</div>
         <div class="po-amount">R<span id="pay-dep-amt">350</span></div>
-        <div class="po-desc">50% upfront. We begin work as soon as payment clears.</div>
+        <div class="po-desc">50% deposit upfront. We begin work as soon as payment clears.</div>
       </a>
       <!-- Full amount option -->
       <a id="pay-full-link" href="https://pay.yoco.com/r/mdOjxJ" target="_blank" rel="noopener noreferrer" class="pay-option full" onclick="closePayment()">
         <div class="po-tag">Pay Full Amount</div>
         <div class="po-amount">R<span id="pay-full-amt">700</span></div>
-        <div class="po-desc">First month in full. No further setup payment required.</div>
+        <div class="po-desc">Full once-off payment. No further payments required.</div>
       </a>
     </div>
     <p class="pay-secure">
@@ -1603,7 +1597,7 @@
 </div>
 
 <!-- ░░░ FLOATING WHATSAPP ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
-<a class="wa-fab" href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa-fab" href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20would%20like%20to%20find%20out%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <span class="wa-tip">Chat on WhatsApp</span>
   <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 14.09c-.23.64-1.36 1.25-1.85 1.32-.49.07-.97.1-1.56-.1-.36-.12-.82-.28-1.41-.55-2.48-1.07-4.1-3.56-4.22-3.73-.13-.17-1.02-1.36-1.02-2.59s.65-1.84.88-2.09c.23-.25.5-.31.67-.31h.47c.15 0 .36-.05.56.43.21.49.7 1.72.77 1.84.07.13.11.27.02.44-.09.17-.13.27-.26.42-.13.15-.27.34-.38.46-.13.13-.26.27-.11.53.14.26.64 1.05 1.38 1.7.95.84 1.75 1.1 2 1.22.25.12.39.1.54-.06.14-.17.62-.72.79-.97.16-.25.32-.21.54-.13.22.09 1.4.66 1.64.78.24.12.4.18.46.28.05.1.05.58-.18 1.21z"/></svg>
 </a>
@@ -1682,16 +1676,16 @@ function updateCount(el) {
 /* ── YOCO PAYMENT OVERLAY ───────────────────────────────────── */
 const PAY_LINKS = {
   'Essential Presence': {
-    deposit: { amt: 350,  url: 'https://pay.yoco.com/r/me0jKb' },
-    full:    { amt: 700,  url: 'https://pay.yoco.com/r/mdOjxJ' }
+    deposit: { amt: 1000, url: 'https://pay.yoco.com/r/2BPq3G' },
+    full:    { amt: 2000, url: 'https://pay.yoco.com/r/4ZMavk' }
   },
   'Corporate Growth': {
-    deposit: { amt: 750,  url: 'https://pay.yoco.com/r/2Jdy68' },
-    full:    { amt: 1500, url: 'https://pay.yoco.com/r/4nJjEA3' }
+    deposit: { amt: 2100, url: 'https://pay.yoco.com/r/mRb1zJv' },
+    full:    { amt: 4200, url: 'https://pay.yoco.com/r/meaeOv' }
   },
   'Enterprise Ecosystem': {
-    deposit: { amt: 1500, url: 'https://pay.yoco.com/r/2beo8p' },
-    full:    { amt: 3000, url: 'https://pay.yoco.com/r/4Gn0k9' }
+    deposit: { amt: 3000, url: 'https://pay.yoco.com/r/2QwlDa' },
+    full:    { amt: 6000, url: 'https://pay.yoco.com/r/mOvMbL' }
   }
 };
 
@@ -1769,12 +1763,10 @@ function handleForm(e) {
   const safeSvc   = sanitizeText(rawSvc,   60);
   const safeMsg   = sanitizeText(rawMsg,   500);
 
-  const body = 'Hi there! I just filled out your website form. Here are my details:\n'
-    + '\u{1F464} Name: ' + safeName
-    + '\n\u{1F4E7} Email: ' + safeEmail
-    + '\n\u{1F4BC} Package: ' + (safeSvc || 'Not specified')
-    + (safeMsg ? '\n\u{1F4AC} Message: ' + safeMsg : '')
-    + '\n\nLooking forward to connecting!';
+  const body = 'New enquiry via website\nName: ' + safeName
+    + '\nEmail: ' + safeEmail
+    + '\nPackage: ' + (safeSvc || 'Not specified')
+    + '\nMessage: ' + safeMsg;
 
   window.open(
     'https://wa.me/27810572093?text=' + encodeURIComponent(body),
@@ -1906,17 +1898,17 @@ var KB = [
   { id:'website_need', match:/\b(websites?|web sites?|web pages?|need (a |an )?(site|web|page)|want (a |an )?(site|web)|build (me|us|a|my)|online presence|digital presence)\b/i,
     replies:['Great. What type of business do you run and are you starting fresh or redesigning something?','A website built right changes how your business performs. What industry are you in and what is the main goal?'] },
 
-  { id:'pricing',      match:/\b(pric\w*|cost|how much|fee|afford\w*|budget|packages?|tiers?|plans?|rate|rand|monthly|subscription)\b/i,
-    replies:['Three packages: Tier 1 at R700/month (R350 deposit), Tier 2 at R1500/month (R750 deposit), Tier 3 at R3000/month (R1500 deposit). Which sounds closest to where your business is?'] },
+  { id:'pricing',      match:/\b(pric\w*|cost|how much|fee|afford\w*|budget|packages?|tiers?|plans?|rate|rand|once.?off|subscription)\b/i,
+    replies:['Three once-off packages: Tier 1 at R2,000 (R1,000 deposit), Tier 2 at R4,200 (R2,100 deposit), Tier 3 at R6,000 (R3,000 deposit). Which sounds closest to where your business is?'] },
 
-  { id:'tier1',        match:/\b(tier 1|essential( presence)?|basic|starter|first (package|tier)|entry|r700|700.?month)\b/i,
-    replies:['Essential Presence is R700/month with a R350 deposit. Custom website, mobile design, WhatsApp button, SEO setup and hosting all included. Ready to go ahead?'] },
+  { id:'tier1',        match:/\b(tier 1|essential( presence)?|basic|starter|first (package|tier)|entry|r2000|2000)\b/i,
+    replies:['Essential Presence is R2,000 once-off with a R1,000 deposit. Custom website, mobile design, WhatsApp button, SEO setup and hosting all included. Handover in 3–5 business days. Ready to go ahead?'] },
 
-  { id:'tier2',        match:/\b(tier 2|corporate( growth)?|most popular|10 page|lead (form|capture)|second (package|tier)|scaling|r1500|1500.?month)\b/i,
-    replies:['Corporate Growth is R1500/month with a R750 deposit. 10 pages, lead forms, Google Maps, AI chatbot and monthly maintenance. Our most popular package. Does this sound right?'] },
+  { id:'tier2',        match:/\b(tier 2|corporate( growth)?|most popular|10 page|lead (form|capture)|second (package|tier)|scaling|r4200|4200)\b/i,
+    replies:['Corporate Growth is R4,200 once-off with a R2,100 deposit. 10 pages, lead forms, Google Maps, AI chatbot and monthly maintenance. Handover in 5–7 business days. Our most popular package. Does this sound right?'] },
 
   { id:'tier3',        match:/\b(tier 3|enterprise|payment gateway|yoco|payfast|xero|sage|accounting|firewall|top tier|third (package|tier))\b/i,
-    replies:['Enterprise Ecosystem is R3000/month with a R1500 deposit. SA payment gateways, Xero and Sage sync, advanced security, priority support and monthly analytics. Want a consultation?'] },
+    replies:['Enterprise Ecosystem is R6,000 once-off with a R3,000 deposit. Premium multi-page site, custom UI/UX, a custom-trained AI chatbot, SA payment gateways, Xero and Sage sync, advanced security and priority support. Handover in 7–10 business days. Want a consultation?'] },
 
   { id:'ecommerce',    match:/\b(ecommerce|e-commerce|online store|sell online|shop|shopping cart|checkout)\b/i,
     replies:['We build SA ecommerce stores with Yoco and PayFast, full product setup and optimised checkouts. Falls under Tier 2 or 3. How many products are you selling?'] },
@@ -1952,7 +1944,7 @@ var KB = [
     replies:['Monthly maintenance and hosting is included in every package. We handle updates, security and content changes.'] },
 
   { id:'professional', match:/\b(doctors?|lawyers?|attorney|therapists?|counsell\w*|coaches?|consultants?|accountants?|dentists?|architects?|physiotherap\w*|psycholog\w*|personal brand|specialists?|i am a|i.m a|im a)\b/i,
-    replies:['We design authority-building sites for professionals all the time. A great website builds immediate trust and brings in the right clients. Would you like Essential Presence at R700/month for a clean credible site, or Corporate Growth at R1500/month which adds lead forms and an AI chatbot?'] },
+    replies:['We design authority-building sites for professionals all the time. A great website builds immediate trust and brings in the right clients. Would you like Essential Presence at R2,000 once-off for a clean credible site, or Corporate Growth at R4,200 once-off which adds lead forms and an AI chatbot?'] },
 
   { id:'restaurant',   match:/\b(restaurant|cafe|coffee|hospitality|food|menu|takeaway|catering|hotel|lodge|accommodation)\b/i,
     replies:['We build hospitality sites with online menus, booking integrations and Google Maps. Reservations, menu showcase or both?'] },
@@ -1998,28 +1990,28 @@ var KB = [
 function handleAffirm() {
   var t = chatState.lastTopic;
   if (t==='tier1')    return 'Perfect. You can get started with the Essential Presence package directly on this page by clicking Get Started on the Tier 1 card. Or WhatsApp us on 081 057 2093 and we will walk you through it step by step.';
-  if (t==='tier2')    return 'Great choice. Click Get Started on the Corporate Growth card on this page to pay the R750 deposit and lock in your slot. Or WhatsApp us on 081 057 2093 and we will handle everything from there.';
+  if (t==='tier2')    return 'Great choice. Click Get Started on the Corporate Growth card on this page to pay the R2,100 deposit and lock in your slot. Or WhatsApp us on 081 057 2093 and we will handle everything from there.';
   if (t==='tier3')    return 'Excellent. For the Enterprise package a consultation makes sense so we can map out your exact requirements. WhatsApp us on 081 057 2093 and we will set that up quickly.';
   if (t==='started')  return 'Brilliant. WhatsApp us on 081 057 2093 or use the contact form on this page. We will follow up within one business day and take it from there.';
   if (t==='website_need') return 'Great. To point you to the right package, can you tell me what type of business you have and what the main goal of the site is?';
-  if (t==='pricing')  return 'Which package are you leaning towards? Tier 1 at R700, Tier 2 at R1500, or Tier 3 at R3000 per month?';
-  if (t==='tier_recommend') return 'Great. Which one suits you better — Essential Presence at R700/month or Corporate Growth at R1500/month? Both start with a 50% deposit and we can get the build going quickly.';
+  if (t==='pricing')  return 'Which package are you leaning towards? Tier 1 at R2,000, Tier 2 at R4,200, or Tier 3 at R6,000 — all once-off?';
+  if (t==='tier_recommend') return 'Great. Which one suits you better — Essential Presence at R2,000 once-off or Corporate Growth at R4,200 once-off? Both start with a 50% deposit and we can get the build going quickly.';
   return 'Sounds good. To help you best, can you tell me a bit more about your business and what you are hoping to achieve online?';
 }
 
 function handleNegate() {
   var t = chatState.lastTopic;
-  if (t==='tier3')   return 'No problem. Tier 2 Corporate Growth at R1500 per month might be a better starting point. It covers a 10 page site, lead forms, AI chatbot and monthly support. Does that sound more aligned with where you are right now?';
-  if (t==='tier2')   return 'Understood. Tier 1 Essential Presence at R700 per month could be the right fit then. A clean, custom website with SEO and WhatsApp integration. Want to know more about what is included?';
-  if (t==='tier1')   return 'Fair enough. If you need more functionality, Tier 2 at R1500 per month adds 10 pages, lead forms and an AI chatbot. Want me to run you through that?';
+  if (t==='tier3')   return 'No problem. Tier 2 Corporate Growth at R4,200 once-off might be a better starting point. It covers a 10 page site, lead forms, AI chatbot and monthly support. Does that sound more aligned with where you are right now?';
+  if (t==='tier2')   return 'Understood. Tier 1 Essential Presence at R2,000 once-off could be the right fit then. A clean, custom website with SEO and WhatsApp integration. Want to know more about what is included?';
+  if (t==='tier1')   return 'Fair enough. If you need more functionality, Tier 2 at R4,200 once-off adds 10 pages, lead forms and an AI chatbot. Want me to run you through that?';
   return 'No problem at all. What would help most right now? I can walk you through our packages, talk about a specific service, or help you figure out the best starting point.';
 }
 
 function handleMoreInfo() {
   var t = chatState.lastTopic;
-  if (t==='tier1')   return 'Essential Presence at R700 per month includes: a fully custom designed website built from scratch, full mobile responsiveness across all devices, a WhatsApp chat button so visitors can message you instantly, core SEO setup for Google visibility, and secure managed cloud hosting. All for a R350 starting deposit. Want to go ahead?';
-  if (t==='tier2')   return 'Corporate Growth at R1500 per month includes everything in Tier 1 plus: up to 10 website pages, lead capture forms so you never miss an enquiry, Google Maps integration, a 24 hour AI chatbot to handle visitor questions, and monthly maintenance. Starting deposit is R750. Ready to move forward?';
-  if (t==='tier3')   return 'Enterprise Ecosystem at R3000 per month includes everything in Tier 1 and 2 plus: South African payment gateways like Yoco and PayFast, Xero and Sage accounting sync, advanced security and firewall protection, priority support response times, and monthly analytics reporting. Starting deposit is R1500. Want to set up a consultation?';
+  if (t==='tier1')   return 'Essential Presence at R2,000 once-off includes: a fully custom designed website built from scratch, full mobile responsiveness across all devices, a WhatsApp chat button so visitors can message you instantly, core SEO setup for Google visibility, and secure managed cloud hosting. Starting deposit is R1,000. Handover in 3–5 business days. Want to go ahead?';
+  if (t==='tier2')   return 'Corporate Growth at R4,200 once-off includes everything in Tier 1 plus: up to 10 website pages, lead capture forms so you never miss an enquiry, Google Maps integration, a 24 hour AI chatbot to handle visitor questions, and monthly maintenance. Starting deposit is R2,100. Handover in 5–7 business days. Ready to move forward?';
+  if (t==='tier3')   return 'Enterprise Ecosystem at R6,000 once-off includes: a premium multi-page website with advanced interactive elements, custom UI/UX design, a custom-trained AI chatbot for your specific business, SA payment gateways, Xero and Sage accounting sync, advanced security, and priority support. Starting deposit is R3,000. Handover in 7–10 business days. Want to set up a consultation?';
   if (t==='services')return 'Our services cover five main areas. Web design which includes business sites, personal brands, ecommerce and landing pages. Automation which covers AI chatbots, WhatsApp systems and booking integrations. SEO and conversion optimisation. Brand strategy. And ongoing maintenance and support. What area interests you most?';
   return 'What specifically would you like to know more about? I can go deeper on pricing, services, timelines or anything else.';
 }
@@ -2042,21 +2034,21 @@ function cicadaRespond(input) {
   /* standalone package name questions — must come BEFORE professional context handler */
   if (/^essential[\s?!.]*$/i.test(lower)) {
     chatState.lastTopic = 'tier1';
-    return 'Essential Presence is R700/month with a R350 deposit. Custom website, mobile design, WhatsApp button, SEO and hosting. Want to go ahead?';
+    return 'Essential Presence is R2,000 once-off with a R1,000 deposit. Custom website, mobile design, WhatsApp button, SEO and hosting. Handover in 3–5 business days. Want to go ahead?';
   }
   if (/^(corporate|corporate growth)[\s?!.]*$/i.test(lower)) {
     chatState.lastTopic = 'tier2';
-    return 'Corporate Growth is R1500/month with a R750 deposit. 10 pages, lead forms, Google Maps, AI chatbot and monthly support. Want to go ahead?';
+    return 'Corporate Growth is R4,200 once-off with a R2,100 deposit. 10 pages, lead forms, Google Maps, AI chatbot and monthly support. Handover in 5–7 business days. Want to go ahead?';
   }
   if (/^enterprise[\s?!.]*$/i.test(lower)) {
     chatState.lastTopic = 'tier3';
-    return 'Enterprise Ecosystem is R3000/month with a R1500 deposit. SA payment gateways, accounting sync, advanced security and priority support. Want a consultation?';
+    return 'Enterprise Ecosystem is R6,000 once-off with a R3,000 deposit. Premium multi-page site, custom UI/UX, custom-trained AI chatbot, SA payment gateways, accounting sync and priority support. Handover in 7–10 business days. Want a consultation?';
   }
 
   /* if last topic was professional and they answered — route to package recommendation */
   if (chatState.lastTopic === 'professional') {
     chatState.lastTopic = 'tier_recommend';
-    return 'For your field, Essential Presence at R700/month gives you a clean, credible site that builds trust and gets enquiries. Or Corporate Growth at R1500/month if you also want lead forms and an AI chatbot. Which sounds right?';
+    return 'For your field, Essential Presence at R2,000 once-off gives you a clean, credible site that builds trust and gets enquiries. Or Corporate Growth at R4,200 once-off if you also want lead forms and an AI chatbot. Which sounds right?';
   }
 
   /* context-aware follow-on: short messages interpreted by last topic */
@@ -2067,7 +2059,7 @@ function cicadaRespond(input) {
     }
     if (/\b(cheap|afford|low|budget)\b/i.test(lower)) {
       chatState.lastTopic = 'pricing';
-      return 'Our entry package is R700/month with a R350 deposit. No hidden fees. Want a full breakdown?';
+      return 'Our entry package is R2,000 once-off with a R1,000 deposit. No hidden fees. Want a full breakdown?';
     }
     if (/\b(start|begin|go|proceed|forward|next)\b/i.test(lower)) {
       chatState.lastTopic = 'started';
@@ -2078,7 +2070,7 @@ function cicadaRespond(input) {
       var professions = /\b(therapist|counsell|doctor|lawyer|attorney|coach|consultant|accountant|dentist|architect|restaurant|cafe|shop|retail|contractor|builder|startup|salon|gym|fitness)\b/i;
       if (professions.test(lower)) {
         chatState.lastTopic = 'tier_recommend';
-        return 'For that type of business, Essential Presence at R700/month is a great starting point. Or step up to Corporate Growth at R1500/month for lead forms and an AI chatbot. Which direction suits you?';
+        return 'For that type of business, Essential Presence at R2,000 once-off is a great starting point. Or step up to Corporate Growth at R4,200 once-off for lead forms and an AI chatbot. Which direction suits you?';
       }
     }
   }
