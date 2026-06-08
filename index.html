@@ -1132,16 +1132,23 @@
     }
 
     /* ─── TRUSTED BY ────────────────────────────────── */
-    .trusted-bg { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 44px 24px; }
-    .trusted-label { text-align: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(9,7,26,.35); font-weight: 600; margin-bottom: 32px; }
-    .trusted-logos { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
-    .tl-logo { height: 40px; max-width: 120px; opacity: .35; filter: grayscale(1); transition: opacity .22s, filter .22s; object-fit: contain; }
+    .trusted-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0; }
+    .trusted-label { text-align: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(9,7,26,.32); font-weight: 600; margin-bottom: 28px; padding: 0 24px; }
+    .trusted-marquee { overflow: hidden; position: relative; }
+    .trusted-marquee::before,
+    .trusted-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none; }
+    .trusted-marquee::before { left: 0; background: linear-gradient(90deg, #fff 40%, transparent); }
+    .trusted-marquee::after  { right: 0; background: linear-gradient(270deg, #fff 40%, transparent); }
+    .trusted-track { display: flex; align-items: center; gap: 24px; width: max-content; animation: marquee-scroll 22s linear infinite; padding: 4px 12px; }
+    .trusted-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .tl-logo { height: 40px; max-width: 120px; opacity: .32; filter: grayscale(1); transition: opacity .22s, filter .22s; object-fit: contain; flex-shrink: 0; }
     .tl-logo:hover { opacity: .65; filter: none; }
     .tl-placeholder {
-      height: 40px; min-width: 90px; padding: 0 16px;
-      background: rgba(9,7,26,.05); border-radius: 8px; border: 1px solid rgba(9,7,26,.09);
+      height: 46px; min-width: 120px; padding: 0 22px; flex-shrink: 0; white-space: nowrap;
+      background: #f5f5fa; border-radius: 10px; border: 1px solid rgba(9,7,26,.07);
       display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; letter-spacing: .1em; color: rgba(9,7,26,.28); text-transform: uppercase;
+      font-size: 11.5px; font-weight: 700; letter-spacing: .08em; color: rgba(9,7,26,.32); text-transform: uppercase;
     }
 
     /* ─── WHY CHOOSE CICADA ─────────────────────────── */
@@ -1318,14 +1325,23 @@
 <!-- ░░░ TRUSTED BY ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 <div class="trusted-bg">
   <p class="trusted-label">Trusted by South African businesses, consultants, and growing brands</p>
-  <div class="trusted-logos">
-    <!-- Replace each tl-placeholder with an <img class="tl-logo" src="..." alt="Client Name"> when logos are available -->
-    <div class="tl-placeholder">Law Firm</div>
-    <div class="tl-placeholder">Consultancy</div>
-    <div class="tl-placeholder">Medical Practice</div>
-    <div class="tl-placeholder">Real Estate</div>
-    <div class="tl-placeholder">Retail Brand</div>
-    <div class="tl-placeholder">Tech Startup</div>
+  <div class="trusted-marquee">
+    <div class="trusted-track">
+      <!-- set 1 -->
+      <div class="tl-placeholder">E-Commerce Stores</div>
+      <div class="tl-placeholder">Consultancy</div>
+      <div class="tl-placeholder">Restaurants</div>
+      <div class="tl-placeholder">Real Estate</div>
+      <div class="tl-placeholder">Retail Brand</div>
+      <div class="tl-placeholder">Tech Startup</div>
+      <!-- set 2 — duplicate for seamless loop -->
+      <div class="tl-placeholder">E-Commerce Stores</div>
+      <div class="tl-placeholder">Consultancy</div>
+      <div class="tl-placeholder">Restaurants</div>
+      <div class="tl-placeholder">Real Estate</div>
+      <div class="tl-placeholder">Retail Brand</div>
+      <div class="tl-placeholder">Tech Startup</div>
+    </div>
   </div>
 </div>
 
@@ -1492,7 +1508,7 @@
       </div>
       <div class="choose-item reveal">
         <div class="choose-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <span class="choose-text">Transparent pricing — no hidden fees</span>
+        <span class="choose-text">Transparent pricing, no hidden fees</span>
       </div>
       <div class="choose-item reveal d1">
         <div class="choose-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -1545,7 +1561,7 @@
           </svg>
         </div>
         <p class="step-title">Development</p>
-        <p class="step-desc">Your site is built clean, fast, and mobile-first — every feature from the brief.</p>
+        <p class="step-desc">Your site is built clean, fast and mobile-first. Every feature from the brief.</p>
       </div>
 
       <div class="process-step reveal d3">
