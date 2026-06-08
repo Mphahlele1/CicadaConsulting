@@ -82,7 +82,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -92,6 +92,8 @@
       font-size: 16px;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     /* ─── NAV ──────────────────────────────────────── */
@@ -1084,11 +1086,26 @@
       .cta-body { padding: 72px 20px; }
     }
     @media (max-width: 600px) {
-      .trust-strip { gap: 22px; padding: 18px 20px; }
+      nav { padding: 10px 14px; }
+      .nav-symbol { height: 52px; }
+      .nav-name { font-size: 17px; letter-spacing: 0.02em; }
+      .nav-slogan { font-size: 9px; }
+      .btn-nav { padding: 8px 14px; font-size: 11px !important; }
+      .trust-strip { gap: 14px; padding: 14px 16px; flex-wrap: wrap; }
+      .trust-item { font-size: 12px; }
+      .hero-btns { flex-direction: column; align-items: center; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; max-width: 320px; justify-content: center; text-align: center; }
       .why-item { flex-direction: column; }
       .why-circle { width: 72px; height: 72px; }
       .why-circle svg { width: 30px; height: 30px; }
       .wa-fab { bottom: 18px; right: 18px; }
+      .cards { gap: 16px; }
+      .card { padding: 30px 20px; }
+      .s-inner { padding-left: 0; padding-right: 0; }
+      .contact-grid { gap: 28px; }
+      .cf-box { padding: 28px 18px; }
+      .testi-grid { gap: 16px; }
+      .foot-top { gap: 32px; }
     }
   </style>
 </head>
