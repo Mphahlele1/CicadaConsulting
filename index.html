@@ -101,13 +101,18 @@
       background: var(--white);
       border-bottom: 1px solid var(--border);
       padding: 10px 40px;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
       z-index: 300;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    /* push page content below the fixed nav */
+    body { padding-top: 100px; }
     .nav-logo {
       display: flex;
       align-items: center;
@@ -1087,6 +1092,7 @@
     }
     @media (max-width: 600px) {
       nav { padding: 10px 14px; }
+      body { padding-top: 78px; }
       .nav-symbol { height: 52px; }
       .nav-name { font-size: 17px; letter-spacing: 0.02em; }
       .nav-slogan { font-size: 9px; }
