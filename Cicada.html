@@ -543,8 +543,9 @@
     }
     .care-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,.35); transform: translateY(-4px); border-color: rgba(129,140,248,.38); }
     .care-name { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); margin-bottom: 6px; font-weight: 600; letter-spacing: -.01em; }
-    .care-price { font-size: 38px; font-weight: 700; color: var(--peri); line-height: 1; margin: 14px 0 20px; letter-spacing: -.02em; }
-    .care-price sup { font-size: 17px; font-weight: 600; vertical-align: super; }
+    .care-price { font-size: 34px; font-weight: 700; color: var(--peri); line-height: 1; margin: 14px 0 20px; letter-spacing: -.02em; }
+    .care-price sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+    .care-price .care-range { font-size: 20px; font-weight: 500; opacity: .6; letter-spacing: -.01em; }
     .care-price sub { font-size: 13px; font-weight: 400; color: rgba(129,140,248,.55); vertical-align: baseline; }
     .care-feat { list-style: none; flex-grow: 1; margin-bottom: 28px; }
     .care-feat li {
@@ -1475,7 +1476,7 @@
     <div class="s-center reveal">
       <div class="s-label" style="color:rgba(129,140,248,.6);">Why Us</div>
       <h2 class="s-title" style="color:var(--white);">Why Businesses Choose<br><span class="hl">Cicada</span></h2>
-      <p class="s-body" style="color:rgba(199,210,254,.55);">We keep things simple, fast, and personal. No big agency delays, no confusing contracts, just results.</p>
+      <p class="s-body" style="color:rgba(199,210,254,.55);">We keep things simple, fast, and personal. No delays, no confusing contracts, just results.</p>
     </div>
     <div class="choose-grid">
       <div class="choose-item reveal">
@@ -1723,7 +1724,7 @@
       <div class="care-card reveal">
         <div class="tier" style="color:var(--peri);">Care Plan</div>
         <div class="care-name">Lite</div>
-        <div class="care-price"><sup>R</sup>250<sub>/month</sub></div>
+        <div class="care-price"><sup>R</sup>250<span class="care-range"> – 340</span><sub>/month</sub></div>
         <ul class="care-feat">
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hosting management</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly backups</li>
@@ -1737,7 +1738,7 @@
       <div class="care-card reveal d1">
         <div class="tier" style="color:var(--peri);">Care Plan</div>
         <div class="care-name">Growth</div>
-        <div class="care-price"><sup>R</sup>450<sub>/month</sub></div>
+        <div class="care-price"><sup>R</sup>450<span class="care-range"> – 550</span><sub>/month</sub></div>
         <ul class="care-feat">
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Lite</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Content updates</li>
@@ -1752,7 +1753,7 @@
       <div class="care-card reveal d2">
         <div class="tier" style="color:var(--peri);">Care Plan</div>
         <div class="care-name">Premium</div>
-        <div class="care-price"><sup>R</sup>750<sub>/month</sub></div>
+        <div class="care-price"><sup>R</sup>750<span class="care-range"> – 900</span><sub>/month</sub></div>
         <ul class="care-feat">
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Growth</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
