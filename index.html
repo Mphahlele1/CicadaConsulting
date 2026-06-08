@@ -1132,24 +1132,19 @@
     }
 
     /* ─── TRUSTED BY ────────────────────────────────── */
-    .trusted-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0; }
-    .trusted-label { text-align: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(9,7,26,.32); font-weight: 600; margin-bottom: 28px; padding: 0 24px; }
-    .trusted-marquee { overflow: hidden; position: relative; }
-    .trusted-marquee::before,
-    .trusted-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none; }
-    .trusted-marquee::before { left: 0; background: linear-gradient(90deg, #fff 40%, transparent); }
-    .trusted-marquee::after  { right: 0; background: linear-gradient(270deg, #fff 40%, transparent); }
-    .trusted-track { display: flex; align-items: center; gap: 24px; width: max-content; animation: marquee-scroll 22s linear infinite; padding: 4px 12px; }
-    .trusted-track:hover { animation-play-state: paused; }
-    @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .tl-logo { height: 40px; max-width: 120px; opacity: .32; filter: grayscale(1); transition: opacity .22s, filter .22s; object-fit: contain; flex-shrink: 0; }
+    .trusted-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 44px 24px; }
+    .trusted-label { text-align: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(9,7,26,.32); font-weight: 600; margin-bottom: 32px; }
+    .trusted-logos { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .tl-logo { height: 40px; max-width: 120px; opacity: .32; filter: grayscale(1); transition: opacity .22s, filter .22s; object-fit: contain; }
     .tl-logo:hover { opacity: .65; filter: none; }
     .tl-placeholder {
-      height: 46px; min-width: 120px; padding: 0 22px; flex-shrink: 0; white-space: nowrap;
-      background: #f5f5fa; border-radius: 10px; border: 1px solid rgba(9,7,26,.07);
+      height: 50px; padding: 0 24px; white-space: nowrap;
+      background: rgba(99,102,241,.07); border-radius: 10px; border: 1.5px solid rgba(99,102,241,.18);
       display: flex; align-items: center; justify-content: center;
-      font-size: 11.5px; font-weight: 700; letter-spacing: .08em; color: rgba(9,7,26,.32); text-transform: uppercase;
+      font-size: 12.5px; font-weight: 800; letter-spacing: .06em; color: var(--violet); text-transform: uppercase;
+      transition: background .22s, border-color .22s, transform .22s;
     }
+    .tl-placeholder:hover { background: rgba(99,102,241,.13); border-color: var(--violet); transform: translateY(-2px); }
 
     /* ─── WHY CHOOSE CICADA ─────────────────────────── */
     .choose-bg { background: #08061A; }
@@ -1325,23 +1320,13 @@
 <!-- ░░░ TRUSTED BY ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 <div class="trusted-bg">
   <p class="trusted-label">Trusted by South African businesses, consultants, and growing brands</p>
-  <div class="trusted-marquee">
-    <div class="trusted-track">
-      <!-- set 1 -->
-      <div class="tl-placeholder">E-Commerce Stores</div>
-      <div class="tl-placeholder">Consultancy</div>
-      <div class="tl-placeholder">Restaurants</div>
-      <div class="tl-placeholder">Real Estate</div>
-      <div class="tl-placeholder">Retail Brand</div>
-      <div class="tl-placeholder">Tech Startup</div>
-      <!-- set 2 — duplicate for seamless loop -->
-      <div class="tl-placeholder">E-Commerce Stores</div>
-      <div class="tl-placeholder">Consultancy</div>
-      <div class="tl-placeholder">Restaurants</div>
-      <div class="tl-placeholder">Real Estate</div>
-      <div class="tl-placeholder">Retail Brand</div>
-      <div class="tl-placeholder">Tech Startup</div>
-    </div>
+  <div class="trusted-logos">
+    <div class="tl-placeholder">E-Commerce Stores</div>
+    <div class="tl-placeholder">Consultancy</div>
+    <div class="tl-placeholder">Restaurants</div>
+    <div class="tl-placeholder">Real Estate</div>
+    <div class="tl-placeholder">Retail Brand</div>
+    <div class="tl-placeholder">Tech Startup</div>
   </div>
 </div>
 
