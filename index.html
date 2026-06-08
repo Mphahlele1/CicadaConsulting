@@ -52,9 +52,11 @@
       "@type": "OfferCatalog",
       "name": "Web Design Packages",
       "itemListElement": [
-        {"@type": "Offer", "name": "Essential Presence",    "price": "2000", "priceCurrency": "ZAR"},
-        {"@type": "Offer", "name": "Corporate Growth",      "price": "4200", "priceCurrency": "ZAR"},
-        {"@type": "Offer", "name": "Enterprise Ecosystem",  "price": "6000", "priceCurrency": "ZAR"}
+        {"@type": "Offer", "name": "Essential Presence",   "price": "2000", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Business Launch",      "price": "3200", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Corporate Growth",     "price": "4200", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Professional Plus",    "price": "5200", "priceCurrency": "ZAR"},
+        {"@type": "Offer", "name": "Enterprise Ecosystem", "price": "6000", "priceCurrency": "ZAR"}
       ]
     }
   }
@@ -454,7 +456,14 @@
 
     /* ─── SERVICES ─────────────────────────────────── */
     .svc-bg { background: var(--bg); }
-    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+    .card { grid-column: span 2; }
+    .card:nth-child(4) { grid-column: 2 / 4; }
+    .card:nth-child(5) { grid-column: 4 / 6; }
     .card {
       background: var(--white);
       border: 1px solid var(--border);
@@ -519,6 +528,56 @@
     .btn-card:hover { background: var(--violet); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(79,70,229,.35); }
     .card.hot .btn-card { background: var(--violet); }
     .card.hot .btn-card:hover { background: var(--indigo); }
+
+    /* ─── CARE PLANS ────────────────────────────────── */
+    .care-bg { background: #08061A; }
+    .care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .care-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(129,140,248,.18);
+      border-radius: 14px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .care-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,.35); transform: translateY(-4px); border-color: rgba(129,140,248,.38); }
+    .care-name { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); margin-bottom: 6px; font-weight: 600; letter-spacing: -.01em; }
+    .care-price { font-size: 38px; font-weight: 700; color: var(--peri); line-height: 1; margin: 14px 0 20px; letter-spacing: -.02em; }
+    .care-price sup { font-size: 17px; font-weight: 600; vertical-align: super; }
+    .care-price sub { font-size: 13px; font-weight: 400; color: rgba(129,140,248,.55); vertical-align: baseline; }
+    .care-feat { list-style: none; flex-grow: 1; margin-bottom: 28px; }
+    .care-feat li {
+      padding: 8px 0;
+      font-size: 13.5px;
+      color: rgba(199,210,254,.6);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid rgba(129,140,248,.08);
+    }
+    .care-feat li:last-child { border-bottom: none; }
+    .care-feat li svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--peri); margin-top: 2px; }
+    .btn-care {
+      background: transparent;
+      color: var(--peri);
+      border: 1.5px solid rgba(129,140,248,.35);
+      padding: 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      transition: all .22s;
+      margin-top: auto;
+      font-family: inherit;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+    .btn-care:hover { background: rgba(129,140,248,.12); border-color: var(--peri); color: var(--white); }
 
     /* ─── CONTACT FORM ─────────────────────────────── */
     .contact-bg { background: var(--pale); }
@@ -1084,7 +1143,10 @@
       nav { padding: 12px 20px; }
       .nav-links a:not(.btn-nav) { display: none; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .why-grid, .cards, .testi-grid { grid-template-columns: 1fr; }
+      .why-grid, .testi-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .card { grid-column: span 1 !important; }
+      .care-grid { grid-template-columns: 1fr; }
       .foot-top { flex-direction: column; }
       .section { padding: 60px 20px; }
       .hero { padding: 80px 20px 100px; }
@@ -1105,8 +1167,10 @@
       .why-circle { width: 72px; height: 72px; }
       .why-circle svg { width: 30px; height: 30px; }
       .wa-fab { bottom: 18px; right: 18px; }
-      .cards { gap: 16px; }
+      .cards { grid-template-columns: 1fr; gap: 16px; }
       .card { padding: 30px 20px; }
+      .care-grid { gap: 16px; }
+      .care-card { padding: 28px 20px; }
       .s-inner { padding-left: 0; padding-right: 0; }
       .contact-grid { gap: 28px; }
       .cf-box { padding: 28px 18px; }
@@ -1130,7 +1194,8 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#why-us">Why Us</a>
-    <a href="#services">Services</a>
+    <a href="#services">Packages</a>
+    <a href="#care-plans">Care Plans</a>
     <a href="#contact">Contact</a>
     <a href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener" class="btn-nav">Get a Quote</a>
   </div>
@@ -1351,19 +1416,43 @@
         </div>
         <div class="divider"></div>
         <ul class="feat">
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom designed website, built from scratch</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom-designed website</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 3 pages</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fully responsive on all devices</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> WhatsApp chat button integration</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Core SEO setup for Google visibility</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Secure cloud hosting and management</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> WhatsApp chat integration</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Contact form</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Basic SEO setup</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Secure hosting setup</li>
         </ul>
         <button class="btn-card" onclick="openPayment('Essential Presence','Tier 1')">Get Started</button>
       </div>
 
       <!-- TIER 2 -->
+      <div class="card reveal d1">
+        <div class="tier">Tier 2</div>
+        <div class="cname">Business Launch</div>
+        <div class="price"><sup>R</sup>3,200<sub>once-off</sub></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+          <div class="dep" style="margin-bottom:0;">Deposit: R1,600.00</div>
+          <div class="dep" style="margin-bottom:0;">4–5 business days</div>
+        </div>
+        <div class="divider"></div>
+        <ul class="feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Tier 1</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 5 pages</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Google Maps integration</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Enhanced contact and enquiry forms</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Google Business Profile setup</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Additional SEO optimisation</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Professional service pages</li>
+        </ul>
+        <button class="btn-card" onclick="openPayment('Business Launch','Tier 2')">Get Started</button>
+      </div>
+
+      <!-- TIER 3 -->
       <div class="card hot reveal d1">
         <div class="hot-badge">Most Popular</div>
-        <div class="tier">Tier 2</div>
+        <div class="tier">Tier 3</div>
         <div class="cname">Corporate Growth</div>
         <div class="price"><sup>R</sup>4,200<sub>once-off</sub></div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
@@ -1372,18 +1461,42 @@
         </div>
         <div class="divider"></div>
         <ul class="feat">
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 10-page professional website</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lead capture and quote request forms</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Google Maps and local search setup</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Monthly content updates and maintenance</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SA payment gateways (Yoco, PayFast, Ozow)</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Tier 2</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 10 pages</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lead capture forms</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quote request forms</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced SEO setup</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Blog or news section</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Payment gateway integration</li>
         </ul>
-        <button class="btn-card" onclick="openPayment('Corporate Growth','Tier 2')">Get Started</button>
+        <button class="btn-card" onclick="openPayment('Corporate Growth','Tier 3')">Get Started</button>
       </div>
 
-      <!-- TIER 3 -->
+      <!-- TIER 4 -->
       <div class="card reveal d2">
-        <div class="tier">Tier 3</div>
+        <div class="tier">Tier 4</div>
+        <div class="cname">Professional Plus</div>
+        <div class="price"><sup>R</sup>5,200<sub>once-off</sub></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+          <div class="dep" style="margin-bottom:0;">Deposit: R2,600.00</div>
+          <div class="dep" style="margin-bottom:0;">6–8 business days</div>
+        </div>
+        <div class="divider"></div>
+        <ul class="feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Tier 3</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Premium multi-page website</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom UI/UX design</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced interactive elements</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Membership or client portal functionality</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Enhanced security configuration</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority project delivery</li>
+        </ul>
+        <button class="btn-card" onclick="openPayment('Professional Plus','Tier 4')">Get Started</button>
+      </div>
+
+      <!-- TIER 5 -->
+      <div class="card reveal d2">
+        <div class="tier">Tier 5</div>
         <div class="cname">Enterprise Ecosystem</div>
         <div class="price"><sup>R</sup>6,000<sub>once-off</sub></div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
@@ -1392,14 +1505,75 @@
         </div>
         <div class="divider"></div>
         <ul class="feat">
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Premium multi-page website with advanced interactive elements, custom UI/UX design, and a custom-trained AI Chatbot configured for your specific business enquiries</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> AI Chatbot integration custom-trained for your specific business enquiries</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Xero or Sage accounting synchronisation</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Tier 4</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fully customised website architecture</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced custom functionality</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> E-commerce capability</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Multi-location website setup</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced security and firewall protection</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority developer support included</li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Monthly analytics and traffic reporting</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority developer support</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Analytics and reporting dashboard</li>
         </ul>
-        <button class="btn-card" onclick="openPayment('Enterprise Ecosystem','Tier 3')">Get Started</button>
+        <button class="btn-card" onclick="openPayment('Enterprise Ecosystem','Tier 5')">Get Started</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CARE PLANS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="section care-bg" id="care-plans">
+  <div class="s-inner">
+    <div class="s-center reveal">
+      <div class="s-label" style="color:rgba(129,140,248,.65);">Monthly Care Plans</div>
+      <h2 class="s-title" style="color:var(--white);">Keep your site fast, secure and current</h2>
+      <p class="s-body" style="color:rgba(199,210,254,.55);">Add a care plan to any package and we handle updates, backups and support every month.</p>
+    </div>
+    <div class="care-grid">
+
+      <!-- CARE LITE -->
+      <div class="care-card reveal">
+        <div class="tier" style="color:var(--peri);">Care Plan</div>
+        <div class="care-name">Lite</div>
+        <div class="care-price"><sup>R</sup>250<sub>/month</sub></div>
+        <ul class="care-feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hosting management</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly backups</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Security monitoring</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Basic technical support</li>
+        </ul>
+        <a href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20am%20interested%20in%20the%20Care%20Plan%20Lite%20at%20R250%2Fmonth." target="_blank" rel="noopener" class="btn-care">Get Started</a>
+      </div>
+
+      <!-- CARE GROWTH -->
+      <div class="care-card reveal d1">
+        <div class="tier" style="color:var(--peri);">Care Plan</div>
+        <div class="care-name">Growth</div>
+        <div class="care-price"><sup>R</sup>450<sub>/month</sub></div>
+        <ul class="care-feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Lite</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Content updates</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Plugin and software updates</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Monthly website health checks</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Performance optimisation</li>
+        </ul>
+        <a href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20am%20interested%20in%20the%20Care%20Plan%20Growth%20at%20R450%2Fmonth." target="_blank" rel="noopener" class="btn-care">Get Started</a>
+      </div>
+
+      <!-- CARE PREMIUM -->
+      <div class="care-card reveal d2">
+        <div class="tier" style="color:var(--peri);">Care Plan</div>
+        <div class="care-name">Premium</div>
+        <div class="care-price"><sup>R</sup>750<sub>/month</sub></div>
+        <ul class="care-feat">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Growth</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Landing page edits</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SEO monitoring</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Monthly analytics report</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 2 hours of website changes per month</li>
+        </ul>
+        <a href="https://wa.me/27810572093?text=Hi%20Cicada%20Consulting%2C%20I%20am%20interested%20in%20the%20Care%20Plan%20Premium%20at%20R750%2Fmonth." target="_blank" rel="noopener" class="btn-care">Get Started</a>
       </div>
 
     </div>
@@ -1461,9 +1635,14 @@
             <label class="flabel" for="cf-service">Package Interest</label>
             <select class="fselect" id="cf-service" name="service">
               <option value="">Select a package (optional)</option>
-              <option value="Essential Presence">Essential Presence — R2,000 once-off</option>
-              <option value="Corporate Growth">Corporate Growth — R4,200 once-off</option>
-              <option value="Enterprise Ecosystem">Enterprise Ecosystem — R6,000 once-off</option>
+              <option value="Essential Presence">Tier 1 — Essential Presence (R2,000)</option>
+              <option value="Business Launch">Tier 2 — Business Launch (R3,200)</option>
+              <option value="Corporate Growth">Tier 3 — Corporate Growth (R4,200)</option>
+              <option value="Professional Plus">Tier 4 — Professional Plus (R5,200)</option>
+              <option value="Enterprise Ecosystem">Tier 5 — Enterprise Ecosystem (R6,000)</option>
+              <option value="Care Plan Lite">Care Plan Lite (R250/month)</option>
+              <option value="Care Plan Growth">Care Plan Growth (R450/month)</option>
+              <option value="Care Plan Premium">Care Plan Premium (R750/month)</option>
               <option value="Not sure yet">Not sure yet, need guidance</option>
             </select>
           </div>
@@ -1702,9 +1881,17 @@ const PAY_LINKS = {
     deposit: { amt: 1000, url: 'https://pay.yoco.com/r/2BPq3G' },
     full:    { amt: 2000, url: 'https://pay.yoco.com/r/4ZMavk' }
   },
+  'Business Launch': {
+    deposit: { amt: 1600, url: 'https://pay.yoco.com/r/mRb1zJv' },
+    full:    { amt: 3200, url: 'https://pay.yoco.com/r/meaeOv' }
+  },
   'Corporate Growth': {
-    deposit: { amt: 2100, url: 'https://pay.yoco.com/r/mRb1zJv' },
-    full:    { amt: 4200, url: 'https://pay.yoco.com/r/meaeOv' }
+    deposit: { amt: 2100, url: 'https://pay.yoco.com/r/2QwlDa' },
+    full:    { amt: 4200, url: 'https://pay.yoco.com/r/mOvMbL' }
+  },
+  'Professional Plus': {
+    deposit: { amt: 2600, url: 'https://pay.yoco.com/r/2QwlDa' },
+    full:    { amt: 5200, url: 'https://pay.yoco.com/r/mOvMbL' }
   },
   'Enterprise Ecosystem': {
     deposit: { amt: 3000, url: 'https://pay.yoco.com/r/2QwlDa' },
@@ -1922,16 +2109,25 @@ var KB = [
     replies:['Great. What type of business do you run and are you starting fresh or redesigning something?','A website built right changes how your business performs. What industry are you in and what is the main goal?'] },
 
   { id:'pricing',      match:/\b(pric\w*|cost|how much|fee|afford\w*|budget|packages?|tiers?|plans?|rate|rand|once.?off|subscription)\b/i,
-    replies:['Three once-off packages: Tier 1 at R2,000 (R1,000 deposit), Tier 2 at R4,200 (R2,100 deposit), Tier 3 at R6,000 (R3,000 deposit). Which sounds closest to where your business is?'] },
+    replies:['We have 5 once-off packages from R2,000 to R6,000, plus monthly care plans from R250. Which tier sounds closest to what you need: Tier 1 (R2,000), Tier 2 (R3,200), Tier 3 (R4,200), Tier 4 (R5,200) or Tier 5 (R6,000)?'] },
 
-  { id:'tier1',        match:/\b(tier 1|essential( presence)?|basic|starter|first (package|tier)|entry|r2000|2000)\b/i,
-    replies:['Essential Presence is R2,000 once-off with a R1,000 deposit. Custom website, mobile design, WhatsApp button, SEO setup and hosting all included. Handover in 3–5 business days. Ready to go ahead?'] },
+  { id:'tier1',        match:/\b(tier 1|essential( presence)?|basic|starter|first (package|tier)|entry|r2000)\b/i,
+    replies:['Essential Presence is R2,000 once-off with a R1,000 deposit. Custom website up to 3 pages, mobile design, WhatsApp button, contact form, SEO and hosting. Handover in 3–5 business days. Ready to go ahead?'] },
 
-  { id:'tier2',        match:/\b(tier 2|corporate( growth)?|most popular|10 page|lead (form|capture)|second (package|tier)|scaling|r4200|4200)\b/i,
-    replies:['Corporate Growth is R4,200 once-off with a R2,100 deposit. 10 pages, lead forms, Google Maps, SA payment gateways (Yoco, PayFast, Ozow) and monthly maintenance. Handover in 5–7 business days. Our most popular package. Does this sound right?'] },
+  { id:'tier2',        match:/\b(tier 2|business launch|second (package|tier)|r3200|3200)\b/i,
+    replies:['Business Launch is R3,200 once-off with a R1,600 deposit. Everything in Tier 1 plus up to 5 pages, Google Maps, Google Business Profile setup and additional SEO. Handover in 4–5 business days. Does this fit?'] },
 
-  { id:'tier3',        match:/\b(tier 3|enterprise|payment gateway|yoco|payfast|xero|sage|accounting|firewall|top tier|third (package|tier))\b/i,
-    replies:['Enterprise Ecosystem is R6,000 once-off with a R3,000 deposit. Premium multi-page site, custom UI/UX, a custom-trained AI chatbot for your specific business, Xero and Sage sync, advanced security and priority support. Handover in 7–10 business days. Want a consultation?'] },
+  { id:'tier3',        match:/\b(tier 3|corporate( growth)?|most popular|10 page|lead (form|capture)|third (package|tier)|r4200|4200)\b/i,
+    replies:['Corporate Growth is R4,200 once-off with a R2,100 deposit. Up to 10 pages, lead capture, quote forms, advanced SEO, blog section and payment gateway integration. Handover in 5–7 business days. Our most popular package. Sound right?'] },
+
+  { id:'tier4',        match:/\b(tier 4|professional plus|fourth (package|tier)|portal|membership|r5200|5200)\b/i,
+    replies:['Professional Plus is R5,200 once-off with a R2,600 deposit. Everything in Tier 3 plus premium multi-page site, custom UI/UX, advanced interactive elements and membership or client portal functionality. Handover in 6–8 business days. Want to know more?'] },
+
+  { id:'tier5',        match:/\b(tier 5|enterprise( ecosystem)?|ecommerce|e-commerce|online store|multi.?location|top tier|fifth (package|tier)|r6000|6000)\b/i,
+    replies:['Enterprise Ecosystem is R6,000 once-off with a R3,000 deposit. Everything in Tier 4 plus e-commerce, multi-location setup, advanced security, priority developer support and analytics dashboard. Handover in 7–10 business days. Want a consultation?'] },
+
+  { id:'careplan',     match:/\b(care plan|maintenance plan|monthly (plan|support|maintenance)|hosting plan|support plan|lite|growth plan|premium plan)\b/i,
+    replies:['We have three monthly care plans: Lite at R250/month (hosting, backups, security, support), Growth at R450/month (adds content updates, health checks and performance optimisation), and Premium at R750/month (adds priority support, SEO monitoring, analytics and up to 2 hours of changes). Which suits you?'] },
 
   { id:'ecommerce',    match:/\b(ecommerce|e-commerce|online store|sell online|shop|shopping cart|checkout)\b/i,
     replies:['We build SA ecommerce stores with Yoco and PayFast, full product setup and optimised checkouts. Falls under Tier 2 or 3. How many products are you selling?'] },
@@ -1967,7 +2163,7 @@ var KB = [
     replies:['Monthly maintenance and hosting is included in every package. We handle updates, security and content changes.'] },
 
   { id:'professional', match:/\b(doctors?|lawyers?|attorney|therapists?|counsell\w*|coaches?|consultants?|accountants?|dentists?|architects?|physiotherap\w*|psycholog\w*|personal brand|specialists?|i am a|i.m a|im a)\b/i,
-    replies:['We design authority-building sites for professionals all the time. A great website builds immediate trust and brings in the right clients. Would you like Essential Presence at R2,000 once-off for a clean credible site, or Corporate Growth at R4,200 once-off which adds lead forms and an AI chatbot?'] },
+    replies:['We design authority-building sites for professionals all the time. For a clean credible site, Tier 1 Essential Presence at R2,000 is great. For more pages and lead capture, Tier 2 Business Launch at R3,200 or Tier 3 Corporate Growth at R4,200 are popular choices. Which sounds closest?'] },
 
   { id:'restaurant',   match:/\b(restaurant|cafe|coffee|hospitality|food|menu|takeaway|catering|hotel|lodge|accommodation)\b/i,
     replies:['We build hospitality sites with online menus, booking integrations and Google Maps. Reservations, menu showcase or both?'] },
@@ -2012,29 +2208,37 @@ var KB = [
 /* ── context-aware short reply handlers ── */
 function handleAffirm() {
   var t = chatState.lastTopic;
-  if (t==='tier1')    return 'Perfect. You can get started with the Essential Presence package directly on this page by clicking Get Started on the Tier 1 card. Or WhatsApp us on 081 057 2093 and we will walk you through it step by step.';
-  if (t==='tier2')    return 'Great choice. Click Get Started on the Corporate Growth card on this page to pay the R2,100 deposit and lock in your slot. Or WhatsApp us on 081 057 2093 and we will handle everything from there.';
-  if (t==='tier3')    return 'Excellent. For the Enterprise package a consultation makes sense so we can map out your exact requirements. WhatsApp us on 081 057 2093 and we will set that up quickly.';
+  if (t==='tier1')    return 'Perfect. Click Get Started on the Tier 1 card on this page to pay the R1,000 deposit and lock in your slot. Or WhatsApp us on 081 057 2093 and we will walk you through it.';
+  if (t==='tier2')    return 'Great choice. Click Get Started on the Tier 2 card to pay the R1,600 deposit. Or WhatsApp us on 081 057 2093 and we will handle everything from there.';
+  if (t==='tier3')    return 'Excellent. Click Get Started on the Tier 3 card to pay the R2,100 deposit and secure your spot. Or WhatsApp 081 057 2093 and we will take it from there.';
+  if (t==='tier4')    return 'Great. Click Get Started on the Tier 4 card to pay the R2,600 deposit. Or WhatsApp 081 057 2093 for a quick chat before committing.';
+  if (t==='tier5')    return 'Excellent. For the Enterprise package a consultation makes sense so we can map out your exact requirements. WhatsApp us on 081 057 2093 and we will set that up quickly.';
+  if (t==='careplan') return 'Great. WhatsApp us on 081 057 2093 with the care plan you want and we will get you set up right away.';
   if (t==='started')  return 'Brilliant. WhatsApp us on 081 057 2093 or use the contact form on this page. We will follow up within one business day and take it from there.';
   if (t==='website_need') return 'Great. To point you to the right package, can you tell me what type of business you have and what the main goal of the site is?';
-  if (t==='pricing')  return 'Which package are you leaning towards? Tier 1 at R2,000, Tier 2 at R4,200, or Tier 3 at R6,000 — all once-off?';
-  if (t==='tier_recommend') return 'Great. Which one suits you better — Essential Presence at R2,000 once-off or Corporate Growth at R4,200 once-off? Both start with a 50% deposit and we can get the build going quickly.';
+  if (t==='pricing')  return 'Which tier are you leaning towards? Tier 1 (R2,000), Tier 2 (R3,200), Tier 3 (R4,200), Tier 4 (R5,200) or Tier 5 (R6,000)?';
+  if (t==='tier_recommend') return 'Great. Which one suits you better — Essential Presence at R2,000, Business Launch at R3,200, or Corporate Growth at R4,200? All start with a 50% deposit.';
   return 'Sounds good. To help you best, can you tell me a bit more about your business and what you are hoping to achieve online?';
 }
 
 function handleNegate() {
   var t = chatState.lastTopic;
-  if (t==='tier3')   return 'No problem. Tier 2 Corporate Growth at R4,200 once-off might be a better starting point. It covers a 10 page site, lead forms, AI chatbot and monthly support. Does that sound more aligned with where you are right now?';
-  if (t==='tier2')   return 'Understood. Tier 1 Essential Presence at R2,000 once-off could be the right fit then. A clean, custom website with SEO and WhatsApp integration. Want to know more about what is included?';
-  if (t==='tier1')   return 'Fair enough. If you need more functionality, Tier 2 at R4,200 once-off adds 10 pages, lead forms and an AI chatbot. Want me to run you through that?';
+  if (t==='tier5')   return 'No problem. Tier 4 Professional Plus at R5,200 once-off might suit you better. Premium site, custom UI/UX and advanced functionality. Interested?';
+  if (t==='tier4')   return 'Understood. Tier 3 Corporate Growth at R4,200 once-off covers up to 10 pages, lead forms, advanced SEO and payment gateways. Would that work?';
+  if (t==='tier3')   return 'No problem. Tier 2 Business Launch at R3,200 once-off might be a better fit. It covers up to 5 pages, Google Maps, Google Business Profile and enhanced SEO. Does that work?';
+  if (t==='tier2')   return 'Understood. Tier 1 Essential Presence at R2,000 once-off is our entry package. Custom website, 3 pages, WhatsApp integration and SEO setup. Want to know more?';
+  if (t==='tier1')   return 'Fair enough. If you need more, Tier 2 Business Launch at R3,200 adds up to 5 pages, Google Maps and Google Business Profile setup. Want me to run you through that?';
   return 'No problem at all. What would help most right now? I can walk you through our packages, talk about a specific service, or help you figure out the best starting point.';
 }
 
 function handleMoreInfo() {
   var t = chatState.lastTopic;
-  if (t==='tier1')   return 'Essential Presence at R2,000 once-off includes: a fully custom designed website built from scratch, full mobile responsiveness across all devices, a WhatsApp chat button so visitors can message you instantly, core SEO setup for Google visibility, and secure managed cloud hosting. Starting deposit is R1,000. Handover in 3–5 business days. Want to go ahead?';
-  if (t==='tier2')   return 'Corporate Growth at R4,200 once-off includes everything in Tier 1 plus: up to 10 website pages, lead capture forms so you never miss an enquiry, Google Maps integration, a 24 hour AI chatbot to handle visitor questions, and monthly maintenance. Starting deposit is R2,100. Handover in 5–7 business days. Ready to move forward?';
-  if (t==='tier3')   return 'Enterprise Ecosystem at R6,000 once-off includes: a premium multi-page website with advanced interactive elements, custom UI/UX design, a custom-trained AI chatbot for your specific business, SA payment gateways, Xero and Sage accounting sync, advanced security, and priority support. Starting deposit is R3,000. Handover in 7–10 business days. Want to set up a consultation?';
+  if (t==='tier1')   return 'Tier 1 Essential Presence (R2,000): custom website, up to 3 pages, mobile responsive, WhatsApp button, contact form, basic SEO and hosting. Deposit: R1,000. Handover: 3–5 days.';
+  if (t==='tier2')   return 'Tier 2 Business Launch (R3,200): everything in Tier 1 plus up to 5 pages, Google Maps, enhanced enquiry forms, Google Business Profile setup and additional SEO. Deposit: R1,600. Handover: 4–5 days.';
+  if (t==='tier3')   return 'Tier 3 Corporate Growth (R4,200): everything in Tier 2 plus up to 10 pages, lead capture, quote forms, advanced SEO, blog section and payment gateway integration. Deposit: R2,100. Handover: 5–7 days.';
+  if (t==='tier4')   return 'Tier 4 Professional Plus (R5,200): everything in Tier 3 plus premium multi-page site, custom UI/UX, advanced interactive elements and client portal functionality. Deposit: R2,600. Handover: 6–8 days.';
+  if (t==='tier5')   return 'Tier 5 Enterprise Ecosystem (R6,000): everything in Tier 4 plus e-commerce, multi-location setup, advanced security and firewall, priority developer support and analytics dashboard. Deposit: R3,000. Handover: 7–10 days.';
+  if (t==='careplan')return 'Lite (R250/month): hosting, backups, security and basic support. Growth (R450/month): adds content updates, health checks and performance optimisation. Premium (R750/month): adds priority support, SEO monitoring, analytics and up to 2 hours of changes. Which suits you?';
   if (t==='services')return 'Our services cover five main areas. Web design which includes business sites, personal brands, ecommerce and landing pages. Automation which covers AI chatbots, WhatsApp systems and booking integrations. SEO and conversion optimisation. Brand strategy. And ongoing maintenance and support. What area interests you most?';
   return 'What specifically would you like to know more about? I can go deeper on pricing, services, timelines or anything else.';
 }
@@ -2057,21 +2261,29 @@ function cicadaRespond(input) {
   /* standalone package name questions — must come BEFORE professional context handler */
   if (/^essential[\s?!.]*$/i.test(lower)) {
     chatState.lastTopic = 'tier1';
-    return 'Essential Presence is R2,000 once-off with a R1,000 deposit. Custom website, mobile design, WhatsApp button, SEO and hosting. Handover in 3–5 business days. Want to go ahead?';
+    return 'Essential Presence (Tier 1) is R2,000 once-off with a R1,000 deposit. Up to 3 pages, mobile design, WhatsApp button, SEO and hosting. Handover in 3–5 business days. Want to go ahead?';
+  }
+  if (/^(business launch|business)[\s?!.]*$/i.test(lower)) {
+    chatState.lastTopic = 'tier2';
+    return 'Business Launch (Tier 2) is R3,200 once-off with a R1,600 deposit. Up to 5 pages, Google Maps, Google Business Profile and enhanced SEO. Handover in 4–5 business days. Want to go ahead?';
   }
   if (/^(corporate|corporate growth)[\s?!.]*$/i.test(lower)) {
-    chatState.lastTopic = 'tier2';
-    return 'Corporate Growth is R4,200 once-off with a R2,100 deposit. 10 pages, lead forms, Google Maps, AI chatbot and monthly support. Handover in 5–7 business days. Want to go ahead?';
+    chatState.lastTopic = 'tier3';
+    return 'Corporate Growth (Tier 3) is R4,200 once-off with a R2,100 deposit. Up to 10 pages, lead forms, blog and payment gateway integration. Handover in 5–7 business days. Our most popular. Want to go ahead?';
+  }
+  if (/^(professional|professional plus)[\s?!.]*$/i.test(lower)) {
+    chatState.lastTopic = 'tier4';
+    return 'Professional Plus (Tier 4) is R5,200 once-off with a R2,600 deposit. Premium multi-page site, custom UI/UX, advanced interactivity and client portal. Handover in 6–8 business days. Want to go ahead?';
   }
   if (/^enterprise[\s?!.]*$/i.test(lower)) {
-    chatState.lastTopic = 'tier3';
-    return 'Enterprise Ecosystem is R6,000 once-off with a R3,000 deposit. Premium multi-page site, custom UI/UX, custom-trained AI chatbot, SA payment gateways, accounting sync and priority support. Handover in 7–10 business days. Want a consultation?';
+    chatState.lastTopic = 'tier5';
+    return 'Enterprise Ecosystem (Tier 5) is R6,000 once-off with a R3,000 deposit. E-commerce, multi-location setup, advanced security, priority support and analytics dashboard. Handover in 7–10 business days. Want a consultation?';
   }
 
   /* if last topic was professional and they answered — route to package recommendation */
   if (chatState.lastTopic === 'professional') {
     chatState.lastTopic = 'tier_recommend';
-    return 'For your field, Essential Presence at R2,000 once-off gives you a clean, credible site that builds trust and gets enquiries. Or Corporate Growth at R4,200 once-off if you also want lead forms and an AI chatbot. Which sounds right?';
+    return 'For your field, Tier 1 Essential Presence at R2,000 is a great start. Tier 2 Business Launch at R3,200 adds Google Business Profile and more pages. Tier 3 Corporate Growth at R4,200 adds lead forms and payment gateways. Which direction suits you?';
   }
 
   /* context-aware follow-on: short messages interpreted by last topic */
@@ -2093,7 +2305,7 @@ function cicadaRespond(input) {
       var professions = /\b(therapist|counsell|doctor|lawyer|attorney|coach|consultant|accountant|dentist|architect|restaurant|cafe|shop|retail|contractor|builder|startup|salon|gym|fitness)\b/i;
       if (professions.test(lower)) {
         chatState.lastTopic = 'tier_recommend';
-        return 'For that type of business, Essential Presence at R2,000 once-off is a great starting point. Or step up to Corporate Growth at R4,200 once-off for lead forms and an AI chatbot. Which direction suits you?';
+        return 'For that type of business, Tier 1 Essential Presence at R2,000 is a great starting point. Tier 2 Business Launch at R3,200 if you want more pages and Google Business Profile. Which direction suits you?';
       }
     }
   }
