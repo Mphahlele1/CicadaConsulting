@@ -1132,15 +1132,20 @@
     }
 
     /* ─── TRUSTED BY ────────────────────────────────── */
-    .trusted-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 44px 24px; }
-    .trusted-label { text-align: center; font-size: 20px; font-weight: 800; color: var(--violet); margin-bottom: 32px; letter-spacing: -.01em; line-height: 1.3; }
-    .trusted-logos { display: flex; align-items: center; justify-content: center; gap: 12px 28px; flex-wrap: wrap; }
-    .tl-logo { height: 40px; max-width: 120px; opacity: .32; filter: grayscale(1); transition: opacity .22s, filter .22s; object-fit: contain; }
-    .tl-logo:hover { opacity: .65; filter: none; }
+    .trusted-bg { background: #fafafa; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 52px 24px; }
+    .trusted-eyebrow { text-align: center; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(9,7,26,.32); font-weight: 700; margin-bottom: 10px; }
+    .trusted-headline { text-align: center; font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 600; color: var(--ink); margin-bottom: 36px; letter-spacing: -.01em; line-height: 1.4; }
+    .trusted-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; }
+    .tl-logo { height: 36px; max-width: 110px; opacity: .28; filter: grayscale(1); transition: opacity .22s; object-fit: contain; }
+    .tl-logo:hover { opacity: .55; }
     .tl-placeholder {
-      background: none; border: none; padding: 0;
-      font-size: 13.5px; font-weight: 800; letter-spacing: .05em; color: var(--violet); text-transform: uppercase;
-      white-space: nowrap;
+      background: none; border: none;
+      font-size: 11px; font-weight: 700; letter-spacing: .12em; color: rgba(9,7,26,.42); text-transform: uppercase;
+      white-space: nowrap; padding: 0 22px; position: relative;
+    }
+    .tl-placeholder:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      width: 1px; height: 13px; background: rgba(9,7,26,.18);
     }
 
     /* ─── WHY CHOOSE CICADA ─────────────────────────── */
@@ -1316,7 +1321,8 @@
 
 <!-- ░░░ TRUSTED BY ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 <div class="trusted-bg">
-  <p class="trusted-label">Trusted by South African businesses, consultants, and growing brands</p>
+  <p class="trusted-eyebrow">Trusted By</p>
+  <p class="trusted-headline">South African businesses, consultants, and growing brands</p>
   <div class="trusted-logos">
     <div class="tl-placeholder">E-Commerce Stores</div>
     <div class="tl-placeholder">Consultancy</div>
